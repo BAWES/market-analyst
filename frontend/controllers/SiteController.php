@@ -74,6 +74,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        // Scrape Data Here?
+        
         return $this->render('index');
     }
 
