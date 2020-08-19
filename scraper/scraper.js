@@ -21,12 +21,14 @@ const success = chalk.keyword("green");
 
     var news = await page.evaluate(() => {
         var articleList = document.querySelectorAll(`li.js-stream-content h3`);
+        var linkList = document.querySelectorAll(`li.js-stream-content a`);
 
 
         var titleLinkArray = [];
         for (var i = 0; i < articleList.length; i++) {
           titleLinkArray[i] = {
             title: articleList[i].innerText.trim(),
+            link: "https://finance.yahoo.com"+linkList[i].getAttribute("href")
             // link: articleList[i].getAttribute("href"),
             // age: ageList[i].innerText.trim(),
             // score: scoreList[i].innerText.trim()
